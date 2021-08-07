@@ -8,6 +8,7 @@
                     <div class="card-header">
                         <b>Surat Kinerja Karyawan</b>
                         <div style="float: right;">
+                            <a href="{{ route('h_tujuan.kinerja.perhitungan') }}" class="btn btn-sm btn-info">Perhitungan</a>
                             <a href="{{ route('h_tujuan.kinerja.create') }}" class="btn btn-sm btn-primary">+</a>
                         </div>
                     </div>

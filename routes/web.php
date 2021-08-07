@@ -86,6 +86,7 @@ Route::group(['prefix' => 'hrd'], function () {
 
     // Kinerja
     Route::get('h_tujuan/kinerja','HRD\TujuanController@kinerja')->name('h_tujuan.kinerja');
+    Route::get('h_tujuan/kinerja/perhitungan','HRD\TujuanController@kinerja_perhitungan')->name('h_tujuan.kinerja.perhitungan');
     Route::get('h_tujuan/kinerja_create','HRD\TujuanController@kinerja_create')->name('h_tujuan.kinerja.create');
     Route::post('h_tujuan/kinerja','HRD\TujuanController@kinerja_store')->name('h_tujuan.kinerja.store');
     Route::get('h_tujuan/kinerja/{id}','HRD\TujuanController@kinerja_show')->name('h_tujuan.kinerja.show');

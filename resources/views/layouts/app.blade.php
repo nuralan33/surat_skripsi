@@ -35,9 +35,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    {{-- <i class="fas fa-laugh-wink"></i> --}}
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PT. YUGO PUTRA SEJAHTERA</div>
             </a>
 
             <!-- Divider -->
@@ -84,7 +84,7 @@
                 </li>
             @elseif (Auth::user()->id_jabatan == '4')
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('h_tujuan.kinerja') }}">
                         <i class="fas fa-fw fa-chart-area"></i>
                         <span>Dashboard</span></a>
                 </li>
