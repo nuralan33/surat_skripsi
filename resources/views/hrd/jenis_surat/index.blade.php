@@ -48,10 +48,10 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Kenaikan Jabatan</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">Jumlah Data {{$kenaikan}} </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">Jumlah Data 0 </div>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="{{route('jenis_surat.index')}}" class="btn btn-sm btn-danger">Lihat</a>
+                                    <a href="{{route('h_tujuan.kenaikan')}}" class="btn btn-sm btn-danger">Lihat</a>
                                     {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
                                 </div>
                             </div>

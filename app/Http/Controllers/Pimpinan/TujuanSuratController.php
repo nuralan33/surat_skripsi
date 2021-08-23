@@ -44,4 +44,13 @@ class TujuanSuratController extends Controller
         $kinerja = Kinerja::all();
         return view('admin.pengajuan_surat.tujuan.kinerja.index', compact('kinerja', 'no'));
     }
+
+    public function kenaikan()
+    {
+        $no = 1;
+        $pengajuan_surat = PengajuanSurat::where('id_jenis_surat', '3')->orderBy('id', 'DESC')->get();
+        return view('pimpinan.pengajuan_surat.tujuan.kenaikan.index', compact('pengajuan_surat', 'no'));
+    }
+
+   
 }

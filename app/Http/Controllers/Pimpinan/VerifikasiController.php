@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pimpinan;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\PengajuanSurat;
+use App\Model\Kinerja;
 
 class VerifikasiController extends Controller
 {
@@ -21,6 +22,14 @@ class VerifikasiController extends Controller
         $surat->status = $request->status;
         $surat->keterangan = $request->keterangan;
         $surat->save();
-        return redirect('pimpinan/p_mutasi?status=disposisi');
+        return redirect('pimpinan/p_kinerja?status=disposisi');
+    }
+
+    public function verifikasi_kenaikan(Request $request){
+        $surat = PengajuanSurat::find($request->id_pengajuan_surat);
+        $surat->status = $request->status;
+        $surat->keterangan = $request->keterangan;
+        $surat->save();
+        return redirect('pimpinan/p_kenaikan?status=disposisi');
     }
 }

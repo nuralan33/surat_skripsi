@@ -35,6 +35,24 @@ class DisposisiController extends Controller
 
     }
 
+    public function disposisi_kenaikan($id){
+        $pegawai = User::all();
+        $pengajuan_surat = PengajuanSurat::find($id);
+        return view('hrd.pengajuan_surat.tujuan.kenaikan.disposisi',compact('pegawai','pengajuan_surat'));
+    }
+
+    public function store_kenaikan(Request $request){
+        $input = $request->all();
+        $simpan = Disposisi::create($input);
+        
+        $surat = PengajuanSurat::find($request->id_pengajuan_surat);
+        $surat->status = '1';
+        $surat->save();
+        
+        return redirect('hrd/h_tujuan/kenaikan?status=disposisi');
+
+    }
+
     
    
 }
