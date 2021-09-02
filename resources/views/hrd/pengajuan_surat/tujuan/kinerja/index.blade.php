@@ -43,7 +43,7 @@
                                         </td>
                                         <td>
                                             @if ($item->status == '0')
-                                                <a href="{{ route('disposisi.mutasi', $item->id) }}"
+                                                <a href="{{ route('disposisi.kinerja', $item->id) }}"
                                                     class="btn btn-sm btn-primary">Disposisi</a>
                                                 <a href="{{ route('h_tujuan.kinerja.show', $item->id) }}" target="_blank"
                                                     class="btn btn-sm btn-info">

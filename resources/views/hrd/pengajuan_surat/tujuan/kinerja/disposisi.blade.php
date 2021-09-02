@@ -14,7 +14,7 @@
 
                     <div class="card-body">
                    
-                        <form action="{{ route('p_disposisi.store',$pengajuan_surat->id) }}" method="POST">
+                        <form action="{{ route('h_disposisi.store_kinerja',$pengajuan_surat->id) }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="" class="form-label">No Surat</label>

@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <b>Perhitungan SAW Kinerja Karyawan</b>
                         <div style="float: right;">
-                            <a href="{{ route('h_tujuan.kinerja.create') }}" class="btn btn-sm btn-primary">+</a>
+                            {{--  <a href="{{ route('h_tujuan.kinerja.create') }}" class="btn btn-sm btn-primary">+</a>  --}}
                         </div>
                     </div>
 
@@ -87,6 +87,7 @@
                             </tbody>
                         </table>
                         <br>
+
                         <h3>Normalisasi</h3>
                         <table class="table table-sm table-bordered">
                             <thead>
@@ -105,7 +106,7 @@
                                         <td>{{ $No++ }}
                                         </td>
                                         <td>
-                                            {{ $item->Pegawai->Jabatan->jabatan }}
+                                            {{ $item->Pegawai->name }}
                                         </td>
                                         <td>
                                             {{ $kualitas_kerja / $item->kualitas_kerja }}
@@ -148,6 +149,7 @@
                             </tbody>
                         </table>
                         <br>
+                        
                         <h3>Hasil Yang Diperoleh</h3>
                         <table class="table table-sm table-bordered">
                             <thead>
@@ -162,10 +164,10 @@
                                     <tr>
                                         <td>{{ $nomor++ }}</td>
                                         <td>
-                                            {{ $item->Pegawai->Jabatan->jabatan }}
+                                            {{ $item->Pegawai->name }}
                                         </td>
                                         <td>
-                                            {{(($kualitas_kerja / $item->kualitas_kerja)*0.083)+(($kuantitas_kerja / $item->kuantitas_kerja)*0.083)+(($inisiatif / $item->inisiatif)*0.083)+(($disiplin / $item->disiplin)*0.083)+(($tanggung_jawab / $item->tanggung_jawab)*0.083)+(($motivasi / $item->motivasi)*0.083)+(($kerjasama / $item->kerjasama)*0.083)+(($PPT / $item->PPT)*0.083)+(($PD / $item->PD)*0.083)+(($kepemimpinan / $item->kepemimpinan)*0.083)+(($PM / $item->PM)*0.083)+(($PT / $item->PT)*0.087)
+                                            {{(($kualitas_kerja / $item->kualitas_kerja)*0.083)+(($kuantitas_kerja / $item->kuantitas_kerja)*0.083)+(($inisiatif / $item->inisiatif)*0.083)+(($disiplin / $item->disiplin)*0.083)+(($tanggung_jawab / $item->tanggung_jawab)*0.083)+(($motivasi / $item->motivasi)*0.082)+(($kerjasama / $item->kerjasama)*0.083)+(($PPT / $item->PPT)*0.083)+(($PD / $item->PD)*0.083)+(($kepemimpinan / $item->kepemimpinan)*0.083)+(($PM / $item->PM)*0.083)+(($PT / $item->PT)*0.087)
                                             }}
                                         </td>
                                     </tr>

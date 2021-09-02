@@ -78,11 +78,14 @@ Route::group(['prefix' => 'hrd'], function () {
     Route::get('h_tujuan/izin','HRD\TujuanController@surat_izin')->name('h_tujuan.surat_izin');
     Route::get('h_tujuan/create_izin','HRD\TujuanController@surat_izin_create')->name('h_tujuan.surat_izin.create');
     Route::post('h_tujuan/create_izin','HRD\TujuanController@surat_izin_store')->name('h_tujuan.surat_izin.store');
-    Route::get('h_tujuan/disposisi_kenaikan/{id}','HRD\DisposisiController@disposisi_mutasi')->name('disposisi.mutasi');
+    Route::get('h_tujuan/disposisi_mutasi/{id}','HRD\DisposisiController@disposisi_mutasi')->name('disposisi.mutasi');
     Route::post('h_tujuan/disposisi_kenaikan','HRD\DisposisiController@store')->name('h_disposisi.store');
+
+    Route::get('h_tujuan/disposisi_kinerja/{id}','HRD\DisposisiController@disposisi_kinerja')->name('disposisi.kinerja');
+    Route::post('h_tujuan/store_kinerja','HRD\DisposisiController@store_kinerja')->name('h_disposisi.store_kinerja');
     
     Route::get('h_tujuan/disposisi_kenaikan/{id}','HRD\DisposisiController@disposisi_kenaikan')->name('disposisi.kenaikan');
-    Route::post('h_tujuan/disposisi_kenaikan','HRD\DisposisiController@store_kenaikan')->name('h_disposisi. ');
+    Route::post('h_tujuan/disposisi_kenaikan','HRD\DisposisiController@store_kenaikan')->name('h_disposisi.store_kenaikan ');
     
     // Mutasi
     Route::get('h_tujuan/mutasi','HRD\TujuanController@mutasi')->name('h_tujuan.mutasi');
