@@ -15,7 +15,7 @@
 
         td {
             line-height: 25px;
-            align=justify;
+            align:justify;
         }
 
         p {
@@ -72,22 +72,22 @@
                         <tr>
                             <td style="width: 80px"><b style="padding-left:20px"></b>a. Sakit</td>
                             <td style="width: 10px">:</td>
-                            <td style="">{{ $kinerja->sakit }} Hari</td>
+                            <td >{{ $kinerja->sakit }} Hari</td>
                             <td style="width: 130px"></td>
                             <td style="width: 10px"></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td style="width: $kinerja->30px"><b style="padding-left:20px"></b>b. Izin</td>
-                            <td style="width: $kinerja->0px">:</td>
+                            <td style="width: 30px"><b style="padding-left:20px"></b>b. Izin</td>
+                            <td style="width: 0px">:</td>
                             <td>{{ $kinerja->izin }} Hari</td>
                             <td></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td style="width: $kinerja->30px"><b style="padding-left:20px"></b>c. Alpa</td>
-                            <td style="width: $kinerja->0px">:</td>
+                            <td style="width: 30px"><b style="padding-left:20px"></b>c. Alpa</td>
+                            <td style="width: 10px">:</td>
                             <td>{{ $kinerja->alpa }} Hari</td>
                             <td></td>
                             <td></td>
@@ -95,7 +95,7 @@
                         </tr>
                         <tr>
                             <td colspan="">2. Keterlambatan </td>
-                            <td style="width: $kinerja->0px">:</td>
+                            <td style="width: 10px">:</td>
                             <td style="width: 80px">{{ $kinerja->terlambat }};</td>
                             <td>Jika Pernah</td>
                             <td>:</td>
@@ -103,7 +103,7 @@
                         </tr>
                         <tr>
                             <td colspan="">3. Datang Siang </td>
-                            <td style="width: $kinerja->0px">:</td>
+                            <td style="width: 10px">:</td>
                             <td style="width: 80px">{{ $kinerja->dt_siang }};</td>
                             <td>Jika Pernah</td>
                             <td>:</td>
@@ -111,7 +111,7 @@
                         </tr>
                         <tr>
                             <td colspan="">4. Pulang cepat </td>
-                            <td style="width: $kinerja->0px">:</td>
+                            <td style="width: 10px">:</td>
                             <td style="width: 80px">{{ $kinerja->pl_cepat }};</td>
                             <td>Jika Pernah</td>
                             <td>:</td>
