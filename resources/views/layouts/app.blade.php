@@ -13,15 +13,12 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('tampilan/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('tampilan/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </head>
 
 <body id="page-top">
@@ -46,64 +43,123 @@
             <!-- Nav Item -  -->
             @if (Auth::user()->id_jabatan == '3')
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Dashboard</span></a>
-                </li>
-                <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('p_tujuan.index') }}">
                         <i class="fas fa-fw fa-table"></i>
                         <span>Pengajuan Surat</span></a>
-                </li>
+                </li> -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Pengajuan Surat</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pengajuan Surat</h6>
+                        <a class="collapse-item" href="{{route('p_tujuan.surat_izin')}}">Surat Izin</a>
+                        <a class="collapse-item" href="{{route('p_tujuan.mutasi')}}">Mutasi</a>
+                        <a class="collapse-item" href="{{route('p_tujuan.kenaikan')}}">Kenaikan Jabatan</a>
+                        <a class="collapse-item" href="{{route('p_tujuan.kinerja')}}">Surat Kinerja Karyawan</a>
+                    </div>
+                </div>
+            </li>
             @elseif (Auth::user()->id_jabatan == '2')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Dashboard</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('pegawai.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Pegawai</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('hrd.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>HRD</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('pengajuan_surat.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Pimpinan</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('jenis_surat.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Pengajuan Surat</span></a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('pegawai.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Pegawai</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('hrd.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>HRD</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('pengajuan_surat.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Pimpinan</span></a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('jenis_surat.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Pengajuan Surat</span></a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Pengajuan Surat</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pengajuan Surat</h6>
+                        <a class="collapse-item" href="{{route('tujuan.surat_izin')}}">Surat Izin</a>
+                        <a class="collapse-item" href="{{route('tujuan.mutasi')}}">Mutasi</a>
+                        <a class="collapse-item" href="{{route('tujuan.kinerja')}}">Surat Kinerja Karyawan</a>
+                    </div>
+                </div>
+            </li>
             @elseif (Auth::user()->id_jabatan == '4')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('h_tujuan.kinerja') }}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Dashboard</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('h_tujuan.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Pengajuan Surat</span></a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('h_tujuan.kinerja') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('h_tujuan.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Pengajuan Surat</span></a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Pengajuan Surat</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pengajuan Surat</h6>
+                        <a class="collapse-item" href="{{route('h_tujuan.surat_izin')}}">Surat Izin</a>
+                        <a class="collapse-item" href="{{route('h_tujuan.mutasi')}}">Mutasi</a>
+                        <a class="collapse-item" href="{{route('h_tujuan.kenaikan')}}">Kenaikan Jabatan</a>
+                        <a class="collapse-item" href="{{route('h_tujuan.kinerja')}}">Surat Kinerja Karyawan</a>
+                    </div>
+                </div>
+            </li>
             @else
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Dashboard</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('p_pengajuan_surat.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Pengajuan Surat</span></a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('p_pengajuan_surat.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Pengajuan Surat</span></a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Pengajuan Surat</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pengajuan Surat</h6>
+                        <a class="collapse-item" href="{{route('p_tujuan.surat_izin')}}">Surat Izin</a>
+                        <a class="collapse-item" href="{{route('p_tujuan.mutasi')}}">Mutasi</a>
+                        <a class="collapse-item" href="{{route('p_tujuan.kenaikan')}}">Kenaikan Jabatan</a>
+                        <a class="collapse-item" href="{{route('p_tujuan.kinerja')}}">Surat Kinerja Karyawan</a>
+                    </div>
+                </div>
+            </li>  -->
             @endif
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -137,28 +193,23 @@
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::User()->name }} - {{Auth::User()->jenis_jabatan}}</span>
-                                <img class="img-profile rounded-circle"
-                                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();" >
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             </div>
@@ -192,8 +243,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
