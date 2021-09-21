@@ -70,7 +70,7 @@
                                                             <button type="button" class="btn btn-sm btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{ route('verifikasi.kinerja') }}" method="POST">
+                                                            <form action="{{ route('verifikasi.kenaikan') }}" method="POST">
                                                                 @csrf
                                                                 <div class="mb-3">
                                                                     <label for="">No Surat :</label>

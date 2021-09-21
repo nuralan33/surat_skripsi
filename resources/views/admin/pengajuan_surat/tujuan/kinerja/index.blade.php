@@ -45,7 +45,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($kinerja as $item)
-                                    @if ($item->status == '0')
+                                    @if ($item->status == '0' || $item->status == '1')
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $item->Pegawai->name }} -
@@ -92,7 +92,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($kinerja as $item)
-                                    @if ($item->status == '1')
+                                    @if ($item->status == '2')
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $item->Pegawai->name }} -
