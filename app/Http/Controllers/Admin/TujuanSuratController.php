@@ -9,7 +9,7 @@ use App\User;
 use Carbon;
 use App\Model\Disposisi;
 use App\Model\Kinerja;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class TujuanSuratController extends Controller
 {
@@ -96,5 +96,37 @@ class TujuanSuratController extends Controller
     {
         $kinerja = Kinerja::find($id);
         return view('admin.pengajuan_surat.tujuan.kinerja.show', compact('kinerja'));
+    }
+
+    public function kenaikan()
+    {
+        $no = 1;
+        $pengajuan_surat = PengajuanSurat::where('id_jenis_surat', '3')->orderBy('id', 'DESC')->get();
+        return view('admin.pengajuan_surat.tujuan.kenaikan.index', compact('pengajuan_surat', 'no'));
+    }
+
+    public function kenaikan_create()
+    {
+        $count =  DB::table('pengajuan_surat')->where('id_jenis_surat', '2')->latest()->first();
+        $tgl = Carbon\Carbon::now()->translatedFormat('Y');
+        $no_surat = ($count->id + 1) . "/kenaikan/" . $tgl;
+
+        $pegawai = User::all();
+        $tanggal = Carbon\Carbon::now()->translatedFormat('l, d F Y');
+        return view('admin.pengajuan_surat.tujuan.kenaikan.create', compact('pegawai', 'tanggal', 'no_surat'));
+    }
+
+    public function kenaikan_store(Request $request)
+    {
+        $input = $request->all();
+        $simpan = PengajuanSurat::create($input);
+        return redirect('admin/h_tujuan/kenaikan?status=sukses');
+    }
+
+    public function kenaikan_show($id)
+    {
+        $disposisi = Disposisi::where('id_pengajuan_surat', $id)->first();
+        $pengajuan_surat = PengajuanSurat::find($id);
+        return view('admin.pengajuan_surat.tujuan.kenaikan.show', compact('pengajuan_surat', 'disposisi'));
     }
 }

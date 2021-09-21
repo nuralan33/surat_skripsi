@@ -15,7 +15,7 @@
 
         td {
             line-height: 25px;
-            align:justify;
+            align=justify;
         }
 
         p {
@@ -80,22 +80,22 @@
                             <tr>
                                 <td style="width: 100px">Nama</td>
                                 <td style="width: 20px">:</td>
-                                <td>{{ $pengajuan_surat->Pegawai->name }}</td>
+                                <td>{{ $disposisi->Pegawai->name }}</td>
                             </tr>
                             <tr>
                                 <td>Jabatan</td>
                                 <td>:</td>
-                                <td>{{ $pengajuan_surat->Pegawai->jenis_jabatan }}</td>
+                                <td>{{ $disposisi->Pegawai->jenis_jabatan }}</td>
                             </tr>
                             <tr>
                                 <td>Alamat</td>
                                 <td>:</td>
-                                <td>{{ $pengajuan_surat->Pegawai->alamat }}</td>
+                                <td>{{ $disposisi->Pegawai->alamat }}</td>
                             </tr>
                             <tr>
                                 <td>No Telpon</td>
                                 <td>:</td>
-                                <td>{{ $pengajuan_surat->Pegawai->no_telp }}</td>
+                                <td>{{ $disposisi->Pegawai->no_telp }}</td>
                             </tr>
                         </table>
                     @endif
@@ -128,11 +128,11 @@
                     </table>
                 </div>
                 <p>
-                    Untuk mengurus proses Mutasi {{ $pengajuan_surat->keterangan }}.
+                    Untuk mengurus proses Kenaikan Jabatan {{ $pengajuan_surat->keterangan }}.
                     Atas perhatian dan kebijaksanaan yang diberikan saya ucapkan terimakasih
                     yang sebesar-besarnya.
                 </p>
-                <div >
+                <div style="">
                     <br>
                     <table>
                         <tr>

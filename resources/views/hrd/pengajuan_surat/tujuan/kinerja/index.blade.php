@@ -14,20 +14,6 @@
                 </div>
 
                 <div class="card-body">
-                    <?php ?>
-                    @if (isset($_GET['status']))
-                    @if ($_GET['status'] == 'sukses')
-                    <div class="alert alert-success" role="alert">
-                        Surat Berhasil Disimpan
-                    </div>
-                    @else
-                    <div class="alert alert-primary" role="alert">
-                        Surat Berhasil Di Disposisikan
-                    </div>
-                    @endif
-
-                    @endif
-
                     <div class="card-body">
                         <?php ?>
                         @if (isset($_GET['status']))

@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <b>Surat Mutasi</b>
                     <div style="float: right;">
-                        <a href="{{ route('tujuan.mutasi.create') }}" class="btn btn-sm btn-primary">+</a>
+                        <!-- <a href="{{ route('tujuan.mutasi.create') }}" class="btn btn-sm btn-primary">+</a> -->
                     </div>
                 </div>
 
@@ -30,8 +30,8 @@
                     <div class="card-body">
 
                         <div class="tab">
-                            <button class="tablinks btn btn-sm btn-info" id="defaultOpen" onclick="openCity(event, 'London')">Disposisi</button>
-                            <button class="tablinks btn btn-sm btn-primary" onclick="openCity(event, 'Paris')">Belum Disetujui</button>
+                            <button class="tablinks btn btn-sm btn-info" id="defaultOpen" onclick="openCity(event, 'London')">Belum Disetujui</button>
+                            <button class="tablinks btn btn-sm btn-danger" onclick="openCity(event, 'Paris')">Ditolak</button>
                             <button class="tablinks btn btn-sm btn-success " onclick="openCity(event, 'Tokyo')">Disetujui </button>
                         </div>
                         <br>

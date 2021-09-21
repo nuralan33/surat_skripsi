@@ -40,14 +40,14 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item -  -->
-            @if (Auth::user()->id_jabatan == '3')
-
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Dashboard</span></a>
             </li>
+            <!-- Nav Item -  -->
+            @if (Auth::user()->id_jabatan == '3')
+
             <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('p_tujuan.index') }}">
                         <i class="fas fa-fw fa-table"></i>
@@ -69,11 +69,11 @@
                 </div>
             </li>
             @elseif (Auth::user()->id_jabatan == '2')
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('pegawai.index') }}">
                     <i class="fas fa-fw fa-table"></i>
@@ -104,16 +104,17 @@
                         <h6 class="collapse-header">Pengajuan Surat</h6>
                         <a class="collapse-item" href="{{route('tujuan.surat_izin')}}">Surat Izin</a>
                         <a class="collapse-item" href="{{route('tujuan.mutasi')}}">Mutasi</a>
+                        <a class="collapse-item" href="{{route('tujuan.kenaikan')}}">Kenaikan Kinerja</a>
                         <a class="collapse-item" href="{{route('tujuan.kinerja')}}">Surat Kinerja Karyawan</a>
                     </div>
                 </div>
             </li>
             @elseif (Auth::user()->id_jabatan == '4')
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('h_tujuan.kinerja') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('h_tujuan.index') }}">
                     <i class="fas fa-fw fa-table"></i>
@@ -135,10 +136,10 @@
                 </div>
             </li>
             @else
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span></a> -->
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('p_pengajuan_surat.index') }}">

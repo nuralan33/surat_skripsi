@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <b>Surat Izin</b>
                     <div style="float: right;">
-                        <a href="{{ route('h_tujuan.surat_izin.create') }}" class="btn btn-sm btn-primary">+</a>
+                        <!-- <a href="{{ route('h_tujuan.surat_izin.create') }}" class="btn btn-sm btn-primary">+</a> -->
                     </div>
                 </div>
 
@@ -45,13 +45,13 @@
                         <div class="card-body">
 
                             <div class="tab">
-                                <button class="tablinks btn btn-sm btn-info" id="defaultOpen" onclick="openCity(event, 'London')">Disposisi</button>
-                                <button class="tablinks btn btn-sm btn-primary" onclick="openCity(event, 'Paris')">Belum Disetujui</button>
-                                <button class="tablinks btn btn-sm btn-success " onclick="openCity(event, 'Tokyo')">Disetujui </button>
+                                <button class="tablinks btn btn-sm btn-info" id="defaultOpen" onclick="openCity(event, 'London')">Belum Disetujui</button>
+                                <button class="tablinks btn btn-sm btn-success" onclick="openCity(event, 'Paris')">Disetujui</button>
+                                <button class="tablinks btn btn-sm btn-danger " onclick="openCity(event, 'Tokyo')"> Ditolak</button>
                             </div>
                             <br>
                             <div id="London" class="tabcontent">
-                                <h3>Disposisi </h3>
+                                <h3>Belum Disetujui </h3>
                                 <table class="table table-sm table-bordered">
                                     <thead>
                                         <th>No</th>
@@ -62,7 +62,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($pengajuan_surat as $item)
-                                        @if ($item->status == '0')
+                                        @if ($item->status == '1')
                                         @foreach ($disposisi as $dis)
                                         @if ($item->id == $dis->id_pengajuan_surat)
                                         @if ($dis->id_user == Auth::User()->id)
@@ -75,8 +75,8 @@
                                             </td>
                                             <td>
                                                 @if ($item->status == '1')
-                                                <a href="{{ route('pengajuan_surat.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
-                                                    -
+                                                <a href="{{ route('pengajuan_surat.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">
+                                                    
                                                     Lihat
                                                     Surat</a>
                                                 <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
@@ -136,7 +136,7 @@
                             </div>
 
                             <div id="Paris" class="tabcontent">
-                                <h3>Belum Disetujui</h3>
+                                <h3>Ditolak</h3>
                                 <table class="table table-sm table-bordered">
                                     <thead>
                                         <th>No</th>
@@ -147,7 +147,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($pengajuan_surat as $item)
-                                        @if ($item->status == '1')
+                                        @if ($item->status == '3')
                                         @foreach ($disposisi as $dis)
                                         @if ($item->id == $dis->id_pengajuan_surat)
                                         @if ($dis->id_user == Auth::User()->id)
@@ -160,7 +160,7 @@
                                             </td>
                                             <td>
                                                 @if ($item->status == '1')
-                                                <a href="{{ route('pengajuan_surat.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
+                                                <a href="{{ route('pengajuan_surat.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Ditolak
                                                     -
                                                     Lihat
                                                     Surat</a>
@@ -232,7 +232,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($pengajuan_surat as $item)
-                                        @if ($item->status == '2' || $item->status == '3')
+                                        @if ($item->status == '2')
                                         @foreach ($disposisi as $dis)
                                         @if ($item->id == $dis->id_pengajuan_surat)
                                         @if ($dis->id_user == Auth::User()->id)
@@ -245,7 +245,7 @@
                                             </td>
                                             <td>
                                                 @if ($item->status == '1')
-                                                <a href="{{ route('pengajuan_surat.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
+                                                <a href="{{ route('pengajuan_surat.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Ditolak
                                                     -
                                                     Lihat
                                                     Surat</a>

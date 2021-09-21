@@ -8,7 +8,7 @@
                     <div class="card-header">
                         Jenis Surat
                         <div style="float: right;">
-                            <a href="{{route('p_pengajuan_surat.show',$pengajuan_surat->id)}}" target="_blank" class="btn btn-sm btn-primary">Detail Surat</a>
+                            <!-- <a href="{{route('p_pengajuan_surat.show',$pengajuan_surat->id)}}" target="_blank" class="btn btn-sm btn-primary">Detail Surat</a> -->
                         </div>
                     </div>
 

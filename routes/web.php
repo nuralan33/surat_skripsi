@@ -43,6 +43,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('tujuan/kinerja','Admin\TujuanSuratController@kinerja_store')->name('tujuan.kinerja.store');
     Route::get('tujuan/kinerja/{id}','Admin\TujuanSuratController@kinerja_show')->name('tujuan.kinerja.show');
 
+    Route::get('tujuan/kenaikan','Admin\TujuanSuratController@kenaikan')->name('tujuan.kenaikan');
+    Route::get('tujuan/kenaikan/create','Admin\TujuanSuratController@kenaikan_create')->name('tujuan.kenaikan.create');
+    Route::post('tujuan/kenaikan','Admin\TujuanSuratController@kenaikan_store')->name('tujuan.kenaikan.store');
+    Route::get('tujuan/kenaikan/{id}','Admin\TujuanSuratController@kenaikan_show')->name('tujuan.kenaikan.show');
 
 });
 
@@ -53,8 +57,10 @@ Route::group(['prefix' => 'pimpinan'], function () {
     Route::get('p_mutasi','pimpinan\TujuanSuratController@mutasi')->name('p_tujuan.mutasi');
     Route::get('p_kenaikan','pimpinan\TujuanSuratController@kenaikan')->name('p_tujuan.kenaikan');
     Route::get('p_kinerja','pimpinan\TujuanSuratController@kinerja')->name('p_tujuan.kinerja');
+    Route::get('p_kinerja/{id}/show','pimpinan\TujuanSuratController@kinerja_show')->name('p_tujuan.kinerja.show');
     Route::post('verifikasi_mutasi','pimpinan\VerifikasiController@verifikasi_mutasi')->name('verifikasi.mutasi');
-    Route::post('verifikasi_kenaikan','pimpinan\VerifikasiController@verifikasi_kenaikan')->name('verifikasi.kinerja');
+    Route::post('verifikasi_kenaikan','pimpinan\VerifikasiController@verifikasi_kenaikan')->name('verifikasi.kenaikan');
+    Route::post('verifikasi_kinerja','pimpinan\VerifikasiController@verifikasi_kinerja')->name('verifikasi.kinerja');
 
 });
 

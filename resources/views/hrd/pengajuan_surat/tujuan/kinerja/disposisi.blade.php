@@ -8,7 +8,7 @@
                     <div class="card-header">
                         Jenis Surat
                         <div style="float: right;">
-                            <a href="{{route('p_pengajuan_surat.show',$pengajuan_surat->id)}}" target="_blank" class="btn btn-sm btn-primary">Detail Surat</a>
+                            <!-- <a href="{{route('p_pengajuan_surat.show',$pengajuan_surat->id)}}" target="_blank" class="btn btn-sm btn-primary">Detail Surat</a> -->
                         </div>
                     </div>
 
@@ -34,7 +34,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"></label>
-                                <a href="{{ route('jenis_surat.index') }}" class="btn btn-sm btn-danger">Batal</a>
+                                <a href="{{ route('h_tujuan.kinerja') }}" class="btn btn-sm btn-danger">Batal</a>
                                 <input type="submit" class="btn btn-sm btn-success" value="Simpan">
                             </div>
                         </form>

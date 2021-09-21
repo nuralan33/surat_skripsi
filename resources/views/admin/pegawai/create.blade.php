@@ -31,8 +31,8 @@
                                 <input type="text" class="form-control" id="" placeholder="Jenis Jabatan" name="jenis_jabatan">
                             </div>
                             <div class="mb-3">
-                                <label for="" class="form-label">No Telponan</label>
-                                <input type="text" class="form-control" id="" placeholder="No Telepona" name="no_telp">
+                                <label for="" class="form-label">No. Telpon</label>
+                                <input type="text" class="form-control" id="" placeholder="No. Telepon" name="no_telp">
                             </div>
                             <div class="mb-3">
                                 <label for="" class="form-label">Tanggal Daftar</label>

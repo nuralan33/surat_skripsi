@@ -20,7 +20,7 @@ class TujuanSuratController extends Controller
         $izin = PengajuanSurat::where('id_jenis_surat', '1')->count();
         $mutasi = PengajuanSurat::where('id_jenis_surat', '2')->count();
         $kenaikan = PengajuanSurat::where('id_jenis_surat', '3')->count();
-        $kinerja = PengajuanSurat::where('id_jenis_surat', '4')->count();
+        $kinerja = Kinerja::all()->count();
         return view('pimpinan.jenis_surat.index', compact('izin', 'no', 'mutasi', 'kenaikan', 'kinerja'));
     }
 
@@ -42,7 +42,14 @@ class TujuanSuratController extends Controller
     {
         $no = 1;
         $kinerja = Kinerja::all();
-        return view('admin.pengajuan_surat.tujuan.kinerja.index', compact('kinerja', 'no'));
+        return view('pimpinan.pengajuan_surat.tujuan.kinerja.index', compact('kinerja', 'no'));
+    }
+
+    public function kinerja_show($id)
+    {
+        $no = 1;
+        $kinerja = Kinerja::find($id);
+        return view('pimpinan.pengajuan_surat.tujuan.kinerja.show', compact('kinerja', 'no'));
     }
 
     public function kenaikan()

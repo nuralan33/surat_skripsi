@@ -95,8 +95,7 @@
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">Jumlah Data {{$kenaikan}} </div>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="{{route('jenis_surat.index')}}" class="btn btn-sm btn-danger">Lihat</a>
-                                    {{-- <i class="fas fa-calendar fa-2x text-gray-300"></i> --}}
+                                    <a href="{{route('tujuan.kenaikan')}}" class="btn btn-sm btn-danger">Lihat</a>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,6 @@ class VerifikasiController extends Controller
     public function verifikasi_kinerja(Request $request){
         $surat = Kinerja::find($request->id_pengajuan_surat);
         $surat->status = $request->status;
-        $surat->keterangan = $request->keterangan;
         $surat->save();
         return redirect('pimpinan/p_kinerja?status=disposisi');
     }

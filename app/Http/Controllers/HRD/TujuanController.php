@@ -20,7 +20,7 @@ class TujuanController extends Controller
         $izin = PengajuanSurat::where('id_jenis_surat', '1')->count();
         $mutasi = PengajuanSurat::where('id_jenis_surat', '2')->count();
         $kenaikan = PengajuanSurat::where('id_jenis_surat', '3')->count();
-        $kinerja = PengajuanSurat::where('id_jenis_surat', '4')->count();
+        $kinerja = Kinerja::all()->count();
         return view('hrd.jenis_surat.index', compact('izin', 'no', 'mutasi', 'kenaikan', 'kinerja'));
     }
 
