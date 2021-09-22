@@ -126,14 +126,14 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($kinerja as $item)
-                                    @if ($item->status == '3')
+                                    @if ($item->status == '2')
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $item->Pegawai->name }} -
                                             {{ $item->Pegawai->Jabatan->jabatan }}
                                         </td>
                                         <td>
-                                            @if ($item->status == '2')
+                                            @if ($item->status == '1')
                                             <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
                                                 Verifikasi
                                             </button>
@@ -173,14 +173,8 @@
                                             <a href="{{ route('p_tujuan.kinerja.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">
                                                 Lihat Surat
                                             </a>
-                                            @elseif($item->status == '2')
-                                            <a href="{{ route('p_tujuan.kinerja.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
-                                                -
-                                                Lihat
-                                                Surat
-                                            </a>
 
-                                            @elseif($item->status == '3')
+                                            @elseif($item->status == '2')
                                             <a href="{{ route('p_tujuan.kinerja.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
                                                 Lihat
                                                 Surat</a>
@@ -254,7 +248,6 @@
                                             <a href="{{ route('p_tujuan.kinerja.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">
                                                 Lihat Surat
                                             </a>
-                                           
 
                                             @elseif($item->status == '2')
                                             <a href="{{ route('p_tujuan.kinerja.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
