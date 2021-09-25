@@ -39,17 +39,35 @@ class PimpinanController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'id_jabatan' => $request->id_jabatan,
-            'jenis_jabatan' => $request->jenis_jabatan,
-            'alamat' => $request->alamat,
-            'no_telp' => $request->no_telp,
-            'tgl_daftar' => $request->tgl_daftar,
-        ]);
-        return redirect('admin/pimpinan?status=sukses');
+        
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->id_jabatan = $request->id_jabatan;
+        $user->jenis_jabatan = $request->jenis_jabatan;
+        $user->alamat = $request->alamat;
+        $user->no_telp = $request->no_telp;
+        $user->tgl_daftar = $request->tgl_daftar;
+        if( $file = $request->file('ttd') != null){
+            $file = $request->file('ttd');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $tujuan_upload = 'ttd';
+            $file->move($tujuan_upload, $nama_file);
+            $pengajuan->file = $nama_file;
+        }
+        $user->save();
+        // User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        //     'id_jabatan' => $request->id_jabatan,
+        //     'jenis_jabatan' => $request->jenis_jabatan,
+        //     'alamat' => $request->alamat,
+        //     'no_telp' => $request->no_telp,
+        //     'tgl_daftar' => $request->tgl_daftar,
+        // ]);
+        // return redirect('admin/pimpinan?status=sukses');
     }
 
     /**
@@ -93,6 +111,13 @@ class PimpinanController extends Controller
         $pimpinan->alamat = $request->alamat;
         if ($request->password != null) {
             $pimpinan->password =  Hash::make($request->password);
+        }
+        if( $file = $request->file('ttd') != null){
+            $file = $request->file('ttd');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $tujuan_upload = 'ttd';
+            $file->move($tujuan_upload, $nama_file);
+            $pimpinan->ttd = $nama_file;
         }
         $pimpinan->save();
         // dd($pimpinan);

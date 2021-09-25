@@ -50,6 +50,13 @@ class TujuanController extends Controller
         return redirect('hrd/h_tujuan/izin?status=sukses');
     }
 
+    public function surat_izin_show($id)
+    {
+        $pengajuan_surat = PengajuanSurat::find($id);
+        $disposisi = Disposisi::where('id_pengajuan_surat', $id)->first();
+        return view('hrd.pengajuan_surat.show', compact('pengajuan_surat', 'disposisi'));
+    }
+
     public function mutasi()
     {
         $no = 1;

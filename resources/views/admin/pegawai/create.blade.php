@@ -19,7 +19,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('pegawai.store') }}" method="POST">
+                        <form action="{{ route('pegawai.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="" class="form-label">Nama</label>
@@ -51,6 +51,10 @@
                                 <textarea name="alamat" class="form-control" id="" cols="30" rows="5"></textarea>
                             </div>
 
+                            <div class="mb-3">
+                                <label for="" class="form-label">TTD</label>
+                                <input type="file" class="form-control" id="" placeholder="ttd" name="ttd">
+                            </div>
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"></label>

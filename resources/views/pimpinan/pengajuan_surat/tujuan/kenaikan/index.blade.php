@@ -18,7 +18,7 @@
                     </div>
                     @else
                     <div class="alert alert-primary" role="alert">
-                        Surat Berhasil Di Disposisikan
+                        Surat Berhasil Di Verifikasi
                     </div>
                     @endif
 
@@ -54,7 +54,7 @@
                                         </td>
                                         <td>
                                             @if ($item->status == '1')
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
                                                 -
                                                 Lihat
                                                 Surat</a>
@@ -99,11 +99,11 @@
                                                 </div>
                                             </div>
                                             @elseif($item->status == '2')
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
                                                 Lihat
                                                 Surat</a>
                                             @else
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-success">Disetujui -
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-success">Disetujui -
                                                 Lihat
                                                 Surat</a>
                                             @endif
@@ -137,7 +137,7 @@
                                         </td>
                                         <td>
                                             @if ($item->status == '1')
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
                                                 -
                                                 Lihat
                                                 Surat</a>
@@ -182,11 +182,11 @@
                                                 </div>
                                             </div>
                                             @elseif($item->status == '2')
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
                                                 Lihat
                                                 Surat</a>
                                             @else
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-success">Disetujui -
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-success">Disetujui -
                                                 Lihat
                                                 Surat</a>
                                             @endif
@@ -220,7 +220,7 @@
                                         </td>
                                         <td>
                                             @if ($item->status == '1')
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-info">Belum Disetujui
                                                 -
                                                 Lihat
                                                 Surat</a>
@@ -265,11 +265,11 @@
                                                 </div>
                                             </div>
                                             @elseif($item->status == '2')
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-danger">Ditolak -
                                                 Lihat
                                                 Surat</a>
                                             @else
-                                            <a href="{{ route('tujuan.mutasi.show', $item->id) }}" target="_blank" class="btn btn-sm btn-success">Disetujui -
+                                            <a href="{{ route('p_tujuan.kenaikan.show', $item->id) }}" target="_blank" class="btn btn-sm btn-success">Disetujui -
                                                 Lihat
                                                 Surat</a>
                                             @endif

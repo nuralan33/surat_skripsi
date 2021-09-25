@@ -24,6 +24,7 @@ class User extends Authenticatable
         'alamat',
         'no_telp',
         'tgl_daftar',
+        'ttd'
     ];
 
     /**

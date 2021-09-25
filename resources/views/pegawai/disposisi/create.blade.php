@@ -24,7 +24,7 @@
                             <div class="mb-3">
                                 <label for="" class="form-label">Nama HRD</label>
                                 <select name="id_user" id="" class="form-control">
-                                    <option value="">Pilih Pegawai</option>
+                                    <option value="">Pilih HRD</option>
                                     @foreach ($pegawai as $item)
                                         @if ($item->id_jabatan == '4')
                                             <option value="{{$item->id}}">{{$item->name}} - {{$item->Jabatan->jabatan}}</option>

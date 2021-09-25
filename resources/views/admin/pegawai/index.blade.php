@@ -36,6 +36,7 @@
                                 <th>No Telpon</th>
                                 <th>Tanggal Daftar</th>
                                 <th>E-Mail</th>
+                                <th>TTD</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -49,6 +50,9 @@
                                             <td>{{ $item->no_telp }}</td>
                                             <td>{{ $item->tgl_daftar }}</td>
                                             <td>{{ $item->email }}</td>
+                                            <td>
+                                                <img src="{{ asset('ttd') }}/{{ $item->ttd }}" width="120px" alt="">
+                                            </td>
                                             <td>
                                                 <a href="{{ route('pegawai.edit', $item->id) }}"
                                                     class="btn btn-sm btn-warning">Edit</a>

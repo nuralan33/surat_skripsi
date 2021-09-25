@@ -39,16 +39,33 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'id_jabatan' => $request->id_jabatan,
-            'jenis_jabatan' => $request->jenis_jabatan,
-            'alamat' => $request->alamat,
-            'no_telp' => $request->no_telp,
-            'tgl_daftar' => $request->tgl_daftar,
-        ]);
+        $pegawai = new User();
+        $pegawai->name = $request->name;
+        $pegawai->id_jabatan = $request->id_jabatan;
+        $pegawai->jenis_jabatan = $request->jenis_jabatan;
+        $pegawai->no_telp = $request->no_telp;
+        $pegawai->tgl_daftar = $request->tgl_daftar;
+        $pegawai->email = $request->email;
+        $pegawai->alamat = $request->alamat;
+        $pegawai->password =  Hash::make($request->password);
+        $file = $request->file('ttd');
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+        $tujuan_upload = 'ttd';
+        $file->move($tujuan_upload, $nama_file);
+        $pegawai->ttd = $nama_file;
+        $pegawai->save();
+        // dd($pegawai);
+        // return redirect('admin/pegawai?status=sukses');
+        // User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        //     'id_jabatan' => $request->id_jabatan,
+        //     'jenis_jabatan' => $request->jenis_jabatan,
+        //     'alamat' => $request->alamat,
+        //     'no_telp' => $request->no_telp,
+        //     'tgl_daftar' => $request->tgl_daftar,
+        // ]);
         return redirect('admin/pegawai?status=sukses');
     }
 
@@ -93,6 +110,13 @@ class PegawaiController extends Controller
         $pegawai->alamat = $request->alamat;
         if ($request->password != null) {
             $pegawai->password = Hash::make($request->password);
+        }
+        if( $file = $request->file('ttd') != null){
+            $file = $request->file('ttd');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $tujuan_upload = 'ttd';
+            $file->move($tujuan_upload, $nama_file);
+            $pegawai->ttd = $nama_file;
         }
         $pegawai->save();
         // dd($pegawai);

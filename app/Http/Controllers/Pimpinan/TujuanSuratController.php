@@ -38,6 +38,14 @@ class TujuanSuratController extends Controller
         return view('pimpinan.pengajuan_surat.tujuan.mutasi.index', compact('pengajuan_surat', 'no'));
     }
 
+    public function mutasi_show($id)
+    {
+        $no = 1;
+        $disposisi = Disposisi::where('id_pengajuan_surat', $id)->first();
+        $pengajuan_surat = PengajuanSurat::find($id);
+        return view('pimpinan.pengajuan_surat.tujuan.mutasi.show', compact('pengajuan_surat', 'disposisi'));
+    }
+
     public function kinerja()
     {
         $no = 1;
@@ -59,5 +67,11 @@ class TujuanSuratController extends Controller
         return view('pimpinan.pengajuan_surat.tujuan.kenaikan.index', compact('pengajuan_surat', 'no'));
     }
 
+    public function kenaikan_show($id)
+    {
+        $disposisi = Disposisi::where('id_pengajuan_surat', $id)->first();
+        $pengajuan_surat = PengajuanSurat::find($id);
+        return view('pimpinan.pengajuan_surat.tujuan.kenaikan.show', compact('pengajuan_surat', 'disposisi'));
+    }
    
 }

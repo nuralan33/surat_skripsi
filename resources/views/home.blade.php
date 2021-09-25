@@ -5,6 +5,10 @@
         <div class="row justify-content-center">
             @if (Auth::user()->id_jabatan == '1')
             {{-- Pegawai --}}
+           
+            <div style="padding-top: 150px">
+                <img src="{{ asset('logo.jpg') }}"  alt="">
+            </div>
             @elseif (Auth::user()->id_jabatan == '2')
             {{-- Admin --}}
                 <div class="col">

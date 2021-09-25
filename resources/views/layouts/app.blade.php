@@ -21,26 +21,26 @@
     </script>
 </head>
 
-<body id="page-top">
+<body id="page-top" >
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" >
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html" >
                 <div class="sidebar-brand-icon rotate-n-15">
                     {{-- <i class="fas fa-laugh-wink"></i> --}}
                 </div>
-                <div class="sidebar-brand-text mx-3">PT. YUGO PUTRA SEJAHTERA</div>
+                <div class="sidebar-brand-text mx-3" >PT. YUGO PUTRA SEJAHTERA</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <li class="nav-item">
+            <li class="nav-item" >
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Dashboard</span></a>
@@ -85,7 +85,7 @@
                     <span>HRD</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('pengajuan_surat.index') }}">
+                <a class="nav-link" href="{{ route('pimpinan.index') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Pimpinan</span></a>
             </li>
@@ -177,7 +177,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="background-color: ">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">

@@ -89,6 +89,7 @@
                         <br>
 
                         <h3>Normalisasi</h3>
+                        <div class="table-responsive">
                         <table class="table table-sm table-bordered">
                             <thead>
                                 <tr>
@@ -148,6 +149,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
                         <br>
                         
                         <h3>Hasil Yang Diperoleh</h3>

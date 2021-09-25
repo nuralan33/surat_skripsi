@@ -94,6 +94,13 @@ class HRDController extends Controller
         if ($request->password != null) {
             $hrd->password = Hash::make($request->password);
         }
+        if( $file = $request->file('ttd') != null){
+            $file = $request->file('ttd');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $tujuan_upload = 'ttd';
+            $file->move($tujuan_upload, $nama_file);
+            $hrd->ttd = $nama_file;
+        }
         $hrd->save();
         // dd($hrd);
         return redirect('admin/hrd?status=sukses');

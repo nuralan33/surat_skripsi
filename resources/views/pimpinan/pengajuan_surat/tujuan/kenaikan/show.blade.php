@@ -22,6 +22,24 @@
             line-height: 25px;
             text-align: justify;
         }
+        hr  
+        {  
+            /* width: 80%;   */
+            height: 2px;  
+            background-color: black;  
+            border-color: black;  
+        } 
+        .con {
+                position: relative;
+                text-align: center;
+                color: white;
+        }
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
 
     </style>
 </head>
@@ -31,12 +49,28 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <br>
-                <center>
-                    <b>
-                        <h3>Surat Mutasi</h3>
-                    </b>
-                </center>
-                <hr>
+                <table class="table table-sm table-borderless">
+                    <tr>
+                        <td style="width: 150px;text-align: 10px">
+                            <center>
+                                <img src="{{ asset('logo.jpg') }}" style="width: 100px" alt="">
+                            </center>
+                        </td>
+                        <td>
+                            <div style="padding-right:180px; padding-top:20px">
+                                <center>
+                                    <b style="font-size:30px">PT. YUGO PUTRA SEJAHTERA</b>
+                                    <br>
+                                    <div style="font-size: 11px;line-height:15px;">
+                                        JL. Ir Sutami Blok A No. 1-3 Telp. (0541) 272436, 272438 Facs. (0541)271228
+                                        SAMARINDA 75126
+                                    </div>
+                                </center>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <hr size="90px">
                 <table class="table table-sm table-borderless">
                     <tr>
                         <td style="width: 100px">No Surat</td>
@@ -155,7 +189,15 @@
                         </tr>
                         <tr style="width: 30px">
                             <td>
-                                <br>
+                                @if ($disposisi == null)
+
+                                @else
+                                    <div class="con">
+                                        <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                        <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                        {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                    </div>
+                                @endif
                                 <br>
                             </td>
                         </tr>

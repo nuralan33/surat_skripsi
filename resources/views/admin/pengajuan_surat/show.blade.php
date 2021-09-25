@@ -22,7 +22,23 @@
             line-height: 25px;
             text-align: justify;
         }
-
+        hr  
+        {  
+            /* width: 80%;   */
+            height: 2px;  
+            background-color: black;  
+            border-color: black;  
+        } 
+        .con {
+                position: relative;
+                text-align: center;
+                color: white;
+        }
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
     </style>
 </head>
 
@@ -44,7 +60,8 @@
                                     <b style="font-size:30px">PT. YUGO PUTRA SEJAHTERA</b>
                                     <br>
                                     <div style="font-size: 11px;line-height:15px;">
-                                        JL. IR Sutami Kec, Sungai Kunjang, Kota Samarinda
+                                        JL. Ir Sutami Blok A No. 1-3 Telp. (0541) 272436, 272438 Facs. (0541)271228
+                                        SAMARINDA 75126
                                     </div>
                                 </center>
                             </div>
@@ -107,7 +124,7 @@
                     <table>
                         <tr>
                             <td>
-                                {{ date('j F  Y', strtotime($pengajuan_surat->tanggal)) }}
+                                {{ $pengajuan_surat->tanggal }}
                             </td>
                         </tr>
                         <tr>
@@ -123,10 +140,19 @@
                                 </center>
                             </td>
                         </tr>
-                        <tr style="width: 30px">
+                        <tr >
                             <td>
+                                @if ($disposisi == null)
+
+                                @else
+                                    <div class="con">
+                                        <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                        <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                        {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                    </div>
+                                @endif
                                 <br>
-                                <br>
+
                             </td>
                         </tr>
                         <tr>
@@ -134,7 +160,10 @@
                                 @if ($disposisi == null)
 
                                 @else
-                                    <b>({{ $disposisi->Pegawai->name }})</b>
+                                <br>
+                                <br>
+                                <br>
+                                    <center><b>({{ $disposisi->Pegawai->name }})</b></center>
                                 @endif
                             </td>
                         </tr>

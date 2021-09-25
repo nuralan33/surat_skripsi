@@ -52,7 +52,11 @@
                                 <textarea name="alamat" class="form-control" id="" cols="30" rows="5">{{$pegawai->alamat}}</textarea>
                             </div>
 
-
+                            <div class="mb-3">
+                                <label for="">TTD</label>
+                                <input type="file" class="form-control" name="ttd">
+                            </div>
+                            
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"></label>
                                 <a href="{{ route('pengajuan_surat.index') }}" class="btn btn-sm btn-danger">Batal</a>

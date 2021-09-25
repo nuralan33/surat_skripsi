@@ -22,7 +22,16 @@
             line-height: 25px;
             text-align: justify;
         }
-
+        .con {
+                position: relative;
+                text-align: center;
+                color: white;
+        }
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
     </style>
 </head>
 
@@ -155,7 +164,15 @@
                         </tr>
                         <tr style="width: 30px">
                             <td>
-                                <br>
+                                @if ($disposisi == null)
+
+                                @else
+                                    <div class="con">
+                                        <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                        <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                        {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                    </div>
+                                @endif
                                 <br>
                             </td>
                         </tr>

@@ -8,7 +8,7 @@
                     <div class="card-header">
                         Pengajuan Surat
                         <div style="float: right;">
-                            <a href="" class="btn btn-sm btn-primary">+</a>
+                            {{-- <a href="" class="btn btn-sm btn-primary">+</a> --}}
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@
                                 <textarea name="keterangan" id="" cols="30" rows="10" class="form-control"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="" class="form-label">Tanggal Surat</label>
+                                <label for="" class="form-label">Choose File</label>
                                 <input type="file" class="form-control" id="" name="file">
                             </div>
                             <div class="mb-3">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\PengajuanSurat;
 use App\Model\Kinerja;
+use App\Model\Disposisi;
 
 class VerifikasiController extends Controller
 {
@@ -27,8 +28,11 @@ class VerifikasiController extends Controller
     public function verifikasi_kenaikan(Request $request){
         $surat = PengajuanSurat::find($request->id_pengajuan_surat);
         $surat->status = $request->status;
-        $surat->keterangan = $request->keterangan;
         $surat->save();
+        $disposisi = new  Disposisi();
+        $disposisi->id_user = $surat->id_user;
+        $disposisi->keterangan = $request->keterangan;
+        $disposisi->save();
         return redirect('pimpinan/p_kenaikan?status=disposisi');
     }
 }

@@ -22,6 +22,14 @@
             line-height: 25px;
             text-align: justify;
         }
+        hr  
+        {  
+            /* width: 80%;   */
+            height: 2px;  
+            background-color: black;  
+            border-color: black;  
+        } 
+
 
     </style>
 </head>
@@ -31,10 +39,22 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <br>
-                <center>
-                    <b>
-                        <h3>Surat Kinerja Karyawan</h3>
-                    </b>
+                <table class="table table-sm table-borderless">
+                    <tr>
+                        <td style="width: 150px;text-align: 10px">
+                            <center>
+                                <img src="{{ asset('logo.jpg') }}" style="width: 100px" alt="">
+                            </center>
+                        </td>
+                        <td>
+                            <div style="padding-right:180px; padding-top:20px">
+                                <center>
+                                    <b style="font-size:30px">PT. YUGO PUTRA SEJAHTERA</b>
+                                    <br>
+                                    <div style="font-size: 13px;line-height:20px;">
+                                        JL. Ir Sutami Blok A No. 1-3 Telp. (0541)272436, 272438 Facs. (0541)271228
+                                         SAMARINDA 75126 
+                                    </div>
                 </center>
                 <hr>
                 <p class="p">Dengan ini mengajukan Penilaian Kerja Karyawan sebagai berikut :</p>

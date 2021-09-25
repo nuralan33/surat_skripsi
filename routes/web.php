@@ -55,7 +55,9 @@ Route::group(['prefix' => 'pimpinan'], function () {
     Route::get('p_jenis_surat','pimpinan\TujuanSuratController@index')->name('p_tujuan.index');
     Route::get('p_surat_izin','pimpinan\TujuanSuratController@surat_izin')->name('p_tujuan.surat_izin');
     Route::get('p_mutasi','pimpinan\TujuanSuratController@mutasi')->name('p_tujuan.mutasi');
+    Route::get('p_mutasi/show/{id}','pimpinan\TujuanSuratController@mutasi_show')->name('p_tujuan.mutasi.show');
     Route::get('p_kenaikan','pimpinan\TujuanSuratController@kenaikan')->name('p_tujuan.kenaikan');
+    Route::get('p_kenaikan/show/{id}','pimpinan\TujuanSuratController@kenaikan_show')->name('p_tujuan.kenaikan.show');
     Route::get('p_kinerja','pimpinan\TujuanSuratController@kinerja')->name('p_tujuan.kinerja');
     Route::get('p_kinerja/{id}/show','pimpinan\TujuanSuratController@kinerja_show')->name('p_tujuan.kinerja.show');
     Route::post('verifikasi_mutasi','pimpinan\VerifikasiController@verifikasi_mutasi')->name('verifikasi.mutasi');
@@ -84,6 +86,7 @@ Route::group(['prefix' => 'hrd'], function () {
     Route::get('h_tujuan/izin','HRD\TujuanController@surat_izin')->name('h_tujuan.surat_izin');
     Route::get('h_tujuan/create_izin','HRD\TujuanController@surat_izin_create')->name('h_tujuan.surat_izin.create');
     Route::post('h_tujuan/create_izin','HRD\TujuanController@surat_izin_store')->name('h_tujuan.surat_izin.store');
+    Route::get('h_tujuan/show_izin/{id}','HRD\TujuanController@surat_izin_show')->name('h_tujuan.surat_izin.show');
     Route::get('h_tujuan/disposisi_mutasi/{id}','HRD\DisposisiController@disposisi_mutasi')->name('disposisi.mutasi');
     Route::post('h_tujuan/disposisi_kenaikan','HRD\DisposisiController@store')->name('h_disposisi.store_ken');
 

@@ -8,7 +8,7 @@
                     <div class="card-header">
                         pimpinan
                         <div style="float: right;">
-                            <a href="{{ route('pimpinan.create') }}" class="btn btn-sm btn-primary">+</a>
+                            {{-- <a href="{{ route('pimpinan.create') }}" class="btn btn-sm btn-primary">+</a> --}}
                         </div>
                     </div>
 
@@ -36,8 +36,9 @@
                                 <th>No Telpon</th>
                                 <th>Tanggal Daftar</th>
                                 <th>E-Mail</th>
+                                <th>TTD</th>
                                 <th>Action</th>
-                            </thead>
+                            </thead> 
                             <tbody>
                                 @foreach ($pimpinan as $item)
                                     @if ($item->id_jabatan == '3')
@@ -49,6 +50,9 @@
                                             <td>{{ $item->no_telp }}</td>
                                             <td>{{ $item->tgl_daftar }}</td>
                                             <td>{{ $item->email }}</td>
+                                            <td>
+                                                <img src="{{ asset('ttd') }}/{{ $item->ttd }}" width="120px" alt="">
+                                            </td>
                                             <td>
                                                 <a href="{{ route('pimpinan.edit', $item->id) }}"
                                                     class="btn btn-sm btn-warning">Edit</a>
