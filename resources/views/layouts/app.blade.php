@@ -172,12 +172,14 @@
 
         </ul>
         <!-- End of Sidebar -->
+        
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+            
 
             <!-- Main Content -->
-            <div id="content" style="background-color: ">
+            <div id="content" style="background-color:#f4f7fa;">
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -192,7 +194,9 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        
                         <div class="topbar-divider d-none d-sm-block"></div>
+                        <div id="content" style="background-color:#eef1f5;">
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::User()->name }} - {{Auth::User()->jenis_jabatan}}</span>
@@ -214,6 +218,7 @@
                                     @csrf
                                 </form>
                             </div>
+                        </div>
                         </li>
 
                     </ul>

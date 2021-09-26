@@ -86,7 +86,7 @@
                 <p class="p">Bapak/Ibu HRD</p>
                 <p class="p">PT. YUGO PUTRA SEJAHTERA</p>
                 <p class="p">Di -</p>
-                <p class="p"><b style="color: white">......</b> Samarinda</p>
+                <p class="p"><b style="color: white"></b> Samarinda</p>
                 <br>
                 <p class="p">Dengan Hormat,</p>
                 <p class="p">Saya yang bertanda tangan di bawah ini :</p>
@@ -144,7 +144,7 @@
                                     @if ( $pengajuan_surat->status == '3')
                                         <div class="con">
                                             <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
-                                            <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                            <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:1px" alt="">
                                             {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
                                         </div>
                                     @endif

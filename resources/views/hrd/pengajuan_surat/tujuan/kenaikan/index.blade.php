@@ -7,6 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                
                     <b>Surat kenaikan</b>
                     <div style="float: right;">
                         <a href="{{ route('h_tujuan.kenaikan.create') }}" class="btn btn-sm btn-primary">+</a>
