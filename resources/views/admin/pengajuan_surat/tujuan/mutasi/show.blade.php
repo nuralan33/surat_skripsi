@@ -22,6 +22,13 @@
             line-height: 25px;
             text-align: justify;
         }
+        hr  
+        {  
+            /* width: 80%;   */
+            height: 2px;  
+            background-color: black;  
+            border-color: black;  
+        } 
         .con {
                 position: relative;
                 text-align: center;
@@ -32,6 +39,7 @@
             top: 8px;
             left: 16px;
         }
+
     </style>
 </head>
 
@@ -40,12 +48,28 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <br>
-                <center>
-                    <b>
-                        <h3>Surat Mutasi</h3>
-                    </b>
-                </center>
-                <hr>
+                <table class="table table-sm table-borderless">
+                    <tr>
+                        <td style="width: 150px;text-align: 10px">
+                            <center>
+                                <img src="{{ asset('logo.jpg') }}" style="width: 100px" alt="">
+                            </center>
+                        </td>
+                        <td>
+                            <div style="padding-right:180px; padding-top:20px">
+                                <center>
+                                    <b style="font-size:30px">PT. YUGO PUTRA SEJAHTERA</b>
+                                    <br>
+                                    <div style="font-size: 11px;line-height:15px;">
+                                        JL. Ir Sutami Blok A No. 1-3 Telp. (0541) 272436, 272438 Facs. (0541)271228
+                                        SAMARINDA 75126
+                                    </div>
+                                </center>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <hr size="90px">
                 <table class="table table-sm table-borderless">
                     <tr>
                         <td style="width: 100px">No Surat</td>
@@ -117,22 +141,46 @@
                         <tr>
                             <td style="width: 100px">Nama</td>
                             <td style="width: 20px">:</td>
-                            <td>{{ $pengajuan_surat->Pegawai->name }}</td>
+                            <td>
+                                @if ($disposisi == null)
+
+                                @else
+                                    {{ $disposisi->Pegawai->name }}
+                                @endif
+                            </td>
                         </tr>
                         <tr>
                             <td>Jabatan</td>
                             <td>:</td>
-                            <td>{{ $pengajuan_surat->Pegawai->jenis_jabatan }}</td>
+                            <td>
+                                @if ($disposisi == null)
+
+                                @else
+                                    {{ $disposisi->Pegawai->jenis_jabatan }}
+                                @endif
+                            </td>
                         </tr>
                         <tr>
                             <td>Alamat</td>
                             <td>:</td>
-                            <td>{{ $pengajuan_surat->Pegawai->alamat }}</td>
+                            <td>
+                                @if ($disposisi == null)
+
+                                @else
+                                    {{ $disposisi->Pegawai->alamat }}
+                                @endif
+                            </td>
                         </tr>
                         <tr>
                             <td>No Telpon</td>
                             <td>:</td>
-                            <td>{{ $pengajuan_surat->Pegawai->no_telp }}</td>
+                            <td>
+                                @if ($disposisi == null)
+
+                                @else
+                                    {{ $disposisi->Pegawai->no_telp }}
+                                @endif
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -155,24 +203,36 @@
                                 <br>
                                
                             </td>
-                            <td style="width: 300px"></td>
+                            <td ></td>
                             <td>
                                 Penerima Kuasa
                                 <br>
                                
                             </td>
                         </tr>
-                        <tr style="width: 30px">
+                        <tr >
                             <td>
                                 @if ($disposisi == null)
 
                                 @else
-                                    <div class="con">
-                                        <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
-                                        <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
-                                        {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
-                                    </div>
+                                    @if ( $pengajuan_surat->status == '3')
+                                        <div class="con">
+                                            <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                            <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                            {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                        </div>
+                                    @endif
                                 @endif
+                                    
+                                <br>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="con">
+                                    <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                    <img  src="{{ asset('ttd') }}/{{ $pengajuan_surat->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                    {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                </div>
                                 <br>
                             </td>
                         </tr>
@@ -181,11 +241,19 @@
                                 @if ($disposisi == null)
 
                                 @else
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                     <b>({{ $disposisi->Pegawai->name }})</b>
                                 @endif
                             </td>
                             <td style="width: 300px"></td>
                             <td>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 <b>({{ $pengajuan_surat->Pegawai->name }})</b>
                             </td>
                         </tr>

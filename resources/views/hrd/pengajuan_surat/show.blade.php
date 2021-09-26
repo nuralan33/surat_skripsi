@@ -141,11 +141,13 @@
                                 @if ($disposisi == null)
 
                                 @else
-                                    <div class="con">
-                                        <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
-                                        <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
-                                        {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
-                                    </div>
+                                    @if ( $pengajuan_surat->status == '3')
+                                        <div class="con">
+                                            <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                            <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
+                                            {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                        </div>
+                                    @endif
                                 @endif
                                 <br>
                             </td>
