@@ -154,7 +154,9 @@
                         </tr>
                         <tr>
                             <td>
+                                <center>
                                 <b>({{$disposisi->Pegawai->name}})</b>
+                                </center>
                             </td>
                         </tr>
                     </table>

@@ -21,7 +21,7 @@
                     </div>
                     @else
                     <div class="alert alert-primary" role="alert">
-                        Surat Berhasil Di Disposisikan
+                        Surat Berhasil Di Verifikasi
                     </div>
                     @endif
 
@@ -36,7 +36,7 @@
                         </div>
                         @else
                         <div class="alert alert-primary" role="alert">
-                            Surat Berhasil Di Disposisikan
+                            Surat Berhasil Di Verifikasi
                         </div>
                         @endif
 

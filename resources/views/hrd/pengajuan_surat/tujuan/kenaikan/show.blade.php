@@ -191,27 +191,45 @@
                                 @if ($disposisi == null)
 
                                 @else
-                                    @if ( $pengajuan_surat->status == '3')
-                                        <div class="con">
-                                            <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
-                                            <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:40px" alt="">
-                                            {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
-                                        </div>
-                                    @endif
+                                @if ( $pengajuan_surat->status == '3')
+                                    <div class="con">
+                                        <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                        <img  src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:1px" alt="">
+                                        {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                                    </div>
                                 @endif
-                                <br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                @if ($disposisi == null)
+                            @endif
+                                
+                            <br>
+                        </td>
+                        <td></td>
+                        <td>
+                            <div class="con">
+                                <img src="{{ asset('pel.png') }}" class="top-left" style="width: 100px" alt="Snow">
+                                <img  src="{{ asset('ttd') }}/{{ $pengajuan_surat->Pegawai->ttd }}" class="top-left" width="150px" style="padding-left:1px" alt="">
+                                {{--  <img class="top-left" src="{{ asset('ttd') }}/{{ $disposisi->Pegawai->ttd }}" width="120px" alt="">  --}}
+                            </div>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if ($disposisi == null)
 
-                                @else
-                                    <b>({{ $disposisi->Pegawai->name }})</b>
-                                @endif
+                            @else
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                                <b>({{ $disposisi->Pegawai->name }})</b>
+                            @endif
                             </td>
                             <td style="width: 300px"></td>
                             <td>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 <b>({{ $pengajuan_surat->Pegawai->name }})</b>
                             </td>
                         </tr>
